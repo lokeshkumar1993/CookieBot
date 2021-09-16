@@ -1,0 +1,282 @@
+
+/* The popup form - hidden by default */
+.form-popup {
+  overflow:auto;
+  display: none;  /* to be changed to none*/
+  position: absolute;
+  left: 25%;
+  width:620px;
+  height:600px;
+  top:10%;
+  bottom: 25%;
+  right: 25%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  background: #FFFFFF;
+  margin-bottom:10px;
+  /* Drop Shadow (Large Popup) */
+  
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.form-popup .close-btn{
+	position: absolute;
+	right: 2.34%;
+	top: 2.34%;
+}
+#cookie-title{
+	position: absolute;
+    width: 447px;
+    height: 48px;
+    left: 76px;
+}
+
+p{
+	/* Desktop / Heading Large (36px) */
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 48px;
+	/* identical to box height, or 133% */
+	align-items: center;
+	text-align: center;
+	letter-spacing: -0.001em;
+	
+	/* Text/Grey Dark */
+	
+	color: #252B33;
+}
+.div-category{
+	/*position: absolute;*/
+	width: 536px;
+	height: 140px;
+    margin-left: 32px;
+	background: #FFFFFF;
+	/* Inner Border Bottom */
+	
+	box-shadow: inset 0px -1px 0px #CCCCCC;
+	margin-top: 24px;
+}
+#necessary{
+	left: 32px;
+	top: 104px;    
+	margin-top: 104px;
+}
+#performance{
+	height:116px
+}
+.subtitle{
+	/*position: absolute;*/
+	width: 153px;
+	height: 28px;
+	
+	/* Body Large (18px) */
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 28px;
+	/* identical to box height, or 156% */
+	
+	letter-spacing: 0.005em;
+	
+	/* Text/Grey Dark */
+	
+	color: #252B33;
+}
+
+.necessary-collapsable{
+	/*position: absolute;*/
+	vertical-align: sub;
+}
+#uparrow{
+	transform: rotate(180deg);
+}
+
+#always-on{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 24px;
+	/* identical to box height, or 150% */
+	
+	text-align: right;
+	letter-spacing: 0.005em;
+	
+	/* Text / Grey Light */
+	
+	color: #667180;
+}
+
+#necessary-desc{
+	position: absolute;
+	display: block;
+	width: 536px;
+	height: 72px;
+	margin-top: 18px;
+}
+.desc{
+	/* Body Medium (16px) */
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 24px;
+	/* or 150% */
+	
+	letter-spacing: 0.005em;
+	
+	/* Text / Grey Light */
+	
+	color: #667180;
+}
+#preference-desc{
+	position: absolute;
+	display: block;
+	width: 536px;
+	height: 72px;
+	margin-top: 18px;
+}
+#performance-desc{
+	position: absolute;
+	display: block;
+	width: 536px;
+	height: 72px;
+	margin-top: 18px;
+}
+#marketing-desc{
+	position: absolute;
+	display: block;
+	width: 536px;
+	height: 72px;
+	margin-top: 18px;
+}
+
+.action{
+	position:sticky;
+	width: 600px;
+	height: 96px;
+	/*margin-top:325px;*/
+	left: 0px;
+	bottom: 0px;
+	
+	/* Neutrals / White */
+	
+	background: #FFFFFF;
+	/* Drop Shadow (Large Popup) */
+	
+	box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.15);
+	border-radius: 0px 0px 4px 4px;
+}
+
+#find-out-more{
+	position: absolute;
+	width: 100px;
+	height: 24px;
+	left: 32px;
+	bottom: 36px;
+	
+	/* Body Medium (16px) */
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 24px;
+	/* identical to box height, or 150% */
+	
+	letter-spacing: 0.005em;
+	
+	color: #1667D9;
+}
+
+#save{
+	position: absolute;
+	width: 264px;
+	height: 48px;
+	left: 304px;
+	bottom: 24px;
+	
+	background: #1667D9;
+	border-radius: 4px;
+	position: absolute;
+
+/* Body Large (18px) */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+align-items: center;
+text-align: center;
+letter-spacing: 0.005em;
+
+/* Neutrals / White */
+
+color: #FFFFFF;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
