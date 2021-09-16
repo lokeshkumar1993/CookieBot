@@ -1,61 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+	<script data-cookieconsent="ignore">
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+					j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+					'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer','GTM-PRW8VM8');
+	</script>
+</head>
+<body>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-     <!-- Google Tag Manager -->
-    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-PRW8VM8');
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- 
-      <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="1f183e9f-1a40-4c53-8f1d-4e9c8eb6c4ca" data-blockingmode="auto" type="text/javascript"></script>
-    !-->
-    <!--
-    <script id="CookieDeclaration" src="https://consent.cookiebot.com/1f183e9f-1a40-4c53-8f1d-4e9c8eb6c4ca/cd.js" type="text/javascript"></script>
-   -->
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRW8VM8"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<div class="form-popup" id="popup">
+  <div class="form-container">
+	<img src="./assets/images/closebtn.png" alt="" class="close-btn" onclick="closepopup()"></img>
+	<div id="cookie-title"><p>Your cookie settings</p></div>
+	<div style="display:flex; flex-direction: column;">
+		<div class="div-category" id="necessary">
+		<div style="display:flex">
+			<div class="subtitle" style="flex: 4">Necessary cookies</div>
+			<div><img id="uparrow-necessary" src="./assets/images/uparrow.png" style="flex: 1" class="necessary-collapsable" onclick="toggleNecessary()"></img></div>
+			<div class="subtitle" id="always-on" style="flex:10; text-align: -webkit-right;">Always On</div>
+		</div>
+		<div id="necessary-desc" class="desc">
+			Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. 
+			The website cannot function properly without these cookies.
+		</div>
+		</div>
+		<div class="div-category" id="preference">
+			<div style="display:flex">
+				<div class="subtitle" style="flex: 4">Preference cookies</div>
+				<div><img id="uparrow-preference" src="./assets/images/uparrow.png" style="flex: 1" class="necessary-collapsable" onclick="togglePreference()"></img></div>
+				<div class="subtitle" style="flex:10; text-align: -webkit-right;">
+					<label class="switch" >
+					<input type="checkbox" id="preferenceSwitch" checked>
+					<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+			<div id="preference-desc" class="desc">
+				Preference cookies enable a website to remember information that changes the way the website behaves or looks, 
+				like your preferred language or the region that you are in.
+			</div>
+		</div>
+		<div class="div-category" id="performance">
+			<div style="display:flex">
+				<div class="subtitle" style="flex: 5">Performance cookies</div>
+				<div><img id="uparrow-performance" src="./assets/images/uparrow.png" style="flex: 1" class="necessary-collapsable" onclick="togglePerformance()"></img></div>
+				<div class="subtitle" style="flex:10; text-align: -webkit-right;">
+					<label class="switch" >
+					<input type="checkbox" id="performanceSwitch" checked>
+					<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+			<div id="performance-desc" class="desc">
+				Statistic cookies help website owners to understand how visitors interact with websites by collecting and reporting information anonymously.
+			</div>
+		</div>
+		<div class="div-category" id="marketing">
+			<div style="display:flex">
+				<div class="subtitle" style="flex: 4">Marketing cookies</div>
+				<div><img id="uparrow-marketing" src="./assets/images/uparrow.png" style="flex: 1" class="necessary-collapsable" onclick="toggleMarketing()"></img></div>
+				<div class="subtitle" style="flex:10; text-align: -webkit-right;">
+					<label class="switch">
+					<input type="checkbox" id="marketingSwitch" checked>
+					<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+			<div id="marketing-desc" class="desc">
+				Marketing cookies are used to track visitors across websites. 
+				The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers.
+			</div>
+		</div>
+		<div class="action">
+			<div style="display:flex;">
+				<div><a id="find-out-more" href="https://www.justgiving.com/about/info/cookie-notice">Find out more</a></div>
+				<div><button id="save" onclick="SaveConsent()">Save changes</button></div>
+			</div>
+		<div>
+	</div>
+	
+  </div>
+</div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<script>
+function closepopup(){
+	var popup = document.getElementById("popup");
+	popup.style.display="none";
+}
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+function toggleNecessary(){
+	var necessity = document.getElementById("necessary");
+	var desc = document.getElementById("necessary-desc");
+	var uparrow = document.getElementById("uparrow-necessary");
+	var popup = document.getElementById("popup");
+	var popupheight = popup.offsetHeight;
+	if(desc.style.display==='none'){
+		var newheight = popupheight + 76  ;
+		popup.style.height= newheight + 'px';
+		necessity.style.height = '140px';
+		uparrow.style.transform= 'rotate(360deg)';
+		desc.style.display='block';
+	}
+	else{
+		var newheight = popupheight - 88  ;
+		popup.style.height= newheight + 'px';
+		necessity.style.height = '58px';
+		uparrow.style.transform= 'rotate(180deg)';
+		desc.style.display='none';
+	}
+}
+
+function togglePreference(){
+	var preference = document.getElementById("preference");
+	var desc = document.getElementById("preference-desc");
+	var uparrow = document.getElementById("uparrow-preference");
+	var popup = document.getElementById("popup");
+	var popupheight = popup.offsetHeight;
+	if(desc.style.display==='none'){
+		var newheight = popupheight + 88  ;
+		popup.style.height= newheight + 'px';
+		preference.style.height = '140px';
+		uparrow.style.transform= 'rotate(360deg)';
+		desc.style.display='block';
+	}
+	else{
+		var newheight = popupheight - 76 ; 
+		popup.style.height= newheight + 'px';
+		preference.style.height = '58px';
+		uparrow.style.transform= 'rotate(180deg)';
+		desc.style.display='none';
+	}
+}
+
+function togglePerformance(){
+	var performance = document.getElementById("performance");
+	var desc = document.getElementById("performance-desc");
+	var uparrow = document.getElementById("uparrow-performance");
+	var popup = document.getElementById("popup");
+	var popupheight = popup.offsetHeight;
+	if(desc.style.display==='none'){
+		var newheight = popupheight + 60;  
+		popup.style.height= newheight + 'px';
+		performance.style.height = '118px';
+		uparrow.style.transform= 'rotate(360deg)';
+		desc.style.display='block';
+	}
+	else{
+		var newheight = popupheight - 60;  
+		popup.style.height= newheight + 'px';
+		performance.style.height = '58px';
+		uparrow.style.transform= 'rotate(180deg)';
+		desc.style.display='none';
+	}
+}
+function toggleMarketing(){
+	var marketing = document.getElementById("marketing");
+	var desc = document.getElementById("marketing-desc");
+	var uparrow = document.getElementById("uparrow-marketing");
+	var popup = document.getElementById("popup");
+	var popupheight = popup.offsetHeight;
+	if(desc.style.display==='none'){
+		var newheight = popupheight + 88 ; 
+		popup.style.height= newheight + 'px';
+		marketing.style.height = '140px';
+		uparrow.style.transform= 'rotate(360deg)';
+		desc.style.display='block';
+	}
+	else{
+		var newheight = popupheight - 76 ; 
+		popup.style.height= newheight + 'px';
+		marketing.style.height = '58px';
+		uparrow.style.transform= 'rotate(180deg)';
+		desc.style.display='none';
+	}
+}
+
+function SaveConsent(){
+	var ispreference= document.getElementById("preferenceSwitch").checked;
+	var isperformance= document.getElementById("performanceSwitch").checked;
+	var ismarketing= document.getElementById("marketingSwitch").checked;
+	document.getElementById("popup").style.display="none";
+	console.log("preferenceSwitch: "+ ispreference +"  performanceSwitch: "+isperformance+"  marketingSwitch: "+ ismarketing);
+	CookieConsent.submitCustomConsent(ispreference, isperformance, ismarketing);
+}
+
+</script>
+
+</body>
 </html>
