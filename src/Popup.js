@@ -118,7 +118,8 @@ SaveConsent(){
     if(cb)
         cb.style.display="none";
 	console.log("preferenceSwitch: "+ ispreference +"  performanceSwitch: "+isperformance+"  marketingSwitch: "+ ismarketing);
-	window.CookieConsent.submitCustomConsent(ispreference, isperformance, ismarketing);
+	if(window.Cookiebot)
+		window.Cookiebot.submitCustomConsent(ispreference, isperformance, ismarketing);
 }
 
     render(){
