@@ -126,7 +126,7 @@ SaveConsent(){
         return (
         <div className="form-popup" id="popup">
             <div className="form-container">
-                <img src="./assets/images/closebtn.png" alt="" className="close-btn" onClick={this.closepopup()}></img>
+                <img src="./assets/images/closebtn.png" alt="" className="close-btn" onClick={this.closepopup.bind(this)}></img>
                 <div id="cookie-title">
                   <p>Your cookie settings</p>
                 </div>
@@ -134,7 +134,7 @@ SaveConsent(){
                     <div className="div-category" id="necessary">
                         <div style={{"display":"flex"}}>
                             <div className="subtitle" style={{"flex": "4"}}>Necessary cookies</div>
-                            <div><img id="uparrow-necessary" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.toggleNecessary()}></img></div>
+                            <div><img id="uparrow-necessary" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.toggleNecessary.bind(this)}></img></div>
                             <div className="subtitle" id="always-on" style={{"flex":"10", "textAlign": "-webkit-right"}}>Always On</div>
                         </div>
                         <div id="necessary-desc" className="desc">
@@ -145,7 +145,7 @@ SaveConsent(){
                     <div className="div-category" id="preference">
                         <div style={{"display":"flex"}}>
                             <div className="subtitle" style={{"flex": "4"}}>Preference cookies</div>
-                            <div><img id="uparrow-preference" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.togglePreference()}></img></div>
+                            <div><img id="uparrow-preference" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.togglePreference.bind(this)}></img></div>
                             <div className="subtitle" style={{"flex":"10", "textAlign": "-webkit-right"}}>
                                 <label className="switch" >
                                     <input type="checkbox" id="preferenceSwitch" defaultChecked/>
@@ -161,7 +161,7 @@ SaveConsent(){
                     <div className="div-category" id="performance">
                         <div style={{"display":"flex"}}>
                             <div className="subtitle" style={{"flex": "5"}}>Performance cookies</div>
-                            <div><img id="uparrow-performance" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.togglePerformance()}></img></div>
+                            <div><img id="uparrow-performance" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.togglePerformance.bind(this)}></img></div>
                             <div className="subtitle" style={{"flex":"10", "textAlign": "-webkit-right"}}>
                                 <label className="switch" >
                                     <input type="checkbox" id="performanceSwitch" defaultChecked/>
@@ -176,7 +176,7 @@ SaveConsent(){
                     <div className="div-category" id="marketing">
                         <div style={{"display":"flex"}}>
                             <div className="subtitle" style={{"flex": "4"}}>Marketing cookies</div>
-                            <div><img id="uparrow-marketing" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.toggleMarketing()}></img></div>
+                            <div><img id="uparrow-marketing" src="./assets/images/uparrow.png" alt="" style={{"flex": "1"}} className="necessary-collapsable" onClick={this.toggleMarketing.bind(this)}></img></div>
                             <div className="subtitle" style={{"flex":"10", "textAlign": "-webkit-right"}}>
                                 <label className="switch">
                                     <input type="checkbox" id="marketingSwitch" defaultChecked/>
@@ -192,7 +192,7 @@ SaveConsent(){
                     <div className="action">
                         <div style={{"display":"flex"}}>
                             <div><a id="find-out-more" href="https://www.justgiving.com/about/info/cookie-notice">Find out more</a></div>
-                            <div><button id="save" onClick={this.SaveConsent()}>Save changes</button></div>
+                            <div><button id="save" onClick={this.SaveConsent.bind(this)}>Save changes</button></div>
                         </div>
                     </div>
                 </div>
