@@ -118,7 +118,7 @@ SaveConsent(){
     if(cb)
         cb.style.display="none";
 	console.log("preferenceSwitch: "+ ispreference +"  performanceSwitch: "+isperformance+"  marketingSwitch: "+ ismarketing);
-	CookieConsent.submitCustomConsent(ispreference, isperformance, ismarketing);
+	//CookieConsent.submitCustomConsent(ispreference, isperformance, ismarketing);
 }
 
     render(){
